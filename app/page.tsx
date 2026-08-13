@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const notes = [
   {
     type: "Playmaking",
@@ -9,7 +11,7 @@ const notes = [
     title: "The Conference of the Birds",
     text: "A Persian mystery play shaped through Attar’s poem, twelve speaking roles, live music, lantern light, and seven valleys of colored silk.",
     tone: "rose",
-    image: "/images/note-playmaking.webp",
+    image: `${basePath}/images/note-playmaking.webp`,
     imageAlt: "Wet-on-wet watercolor of a Persian lantern, birds, colored silks, and Mount Qaf at twilight",
   },
   {
@@ -18,7 +20,7 @@ const notes = [
     title: "One community, two grades",
     text: "Rhythm, room design, and the practical art of holding two distinct classes without losing the feeling of a shared whole.",
     tone: "ochre",
-    image: "/images/note-rhythm.webp",
+    image: `${basePath}/images/note-rhythm.webp`,
     imageAlt: "Watercolor still life of two main lesson books, beeswax blocks, chalk, and green silk",
   },
   {
@@ -27,7 +29,7 @@ const notes = [
     title: "Belonging is something we make",
     text: "Small, repeatable practices for noticing isolation, repairing harm, and helping every child become a needed member of the class.",
     tone: "sage",
-    image: "/images/note-belonging.webp",
+    image: `${basePath}/images/note-belonging.webp`,
     imageAlt: "Watercolor of wooden figures forming a welcoming circle with one figure approaching",
   },
 ];
@@ -102,10 +104,10 @@ const bookChapters = [
 ];
 
 const galleryTracks = [
-  { medium: "Watercolor & veil painting", image: "/images/note-playmaking.webp", alt: "Watercolor lantern, birds, and flowing color" },
-  { medium: "Chalkboard drawing", image: "/images/waldorf-classroom.webp", alt: "Waldorf classroom with a botanical chalkboard drawing" },
-  { medium: "Crayon, charcoal & pastel", image: "/images/ruckschau.webp", alt: "Charcoal and chalk evening classroom study" },
-  { medium: "Main lesson books", image: "/images/about-teacher.webp", alt: "Painted teacher desk with a main lesson book and art materials" },
+  { medium: "Watercolor & veil painting", image: `${basePath}/images/note-playmaking.webp`, alt: "Watercolor lantern, birds, and flowing color" },
+  { medium: "Chalkboard drawing", image: `${basePath}/images/waldorf-classroom.webp`, alt: "Waldorf classroom with a botanical chalkboard drawing" },
+  { medium: "Crayon, charcoal & pastel", image: `${basePath}/images/ruckschau.webp`, alt: "Charcoal and chalk evening classroom study" },
+  { medium: "Main lesson books", image: `${basePath}/images/about-teacher.webp`, alt: "Painted teacher desk with a main lesson book and art materials" },
 ];
 
 export default function Home() {
@@ -164,7 +166,7 @@ export default function Home() {
         </div>
         <div className="hero-art">
           <img
-            src="/images/waldorf-classroom.webp"
+            src=`${basePath}/images/waldorf-classroom.webp`
             alt="A luminous watercolor Waldorf classroom with natural wood, silk cloths, lesson books, a nature table, and a botanical chalkboard"
           />
           <p>“Receive the children in reverence; educate them in love.”</p>
@@ -262,7 +264,7 @@ export default function Home() {
       <section className="play-feature" id="plays">
         <div className="play-visual">
           <img
-            src="/images/conference-birds.webp"
+            src=`${basePath}/images/conference-birds.webp`
             alt="Wet-on-wet watercolor of twelve birds circling Mount Qaf above a Persian lantern and seven flowing silks"
           />
         </div>
@@ -397,8 +399,7 @@ export default function Home() {
               <p>{item.description}</p>
               {item.title === "The evening review, renewed" ? (
                 <a className="library-read-link" href="#evening-review">Read the full practice <span>↓</span></a>
-              ) : (
-                <span className="coming-label">Field note in progress</span>
+              ) : (                <span className="coming-label">Field note in progress</span>
               )}
             </article>
           ))}
@@ -442,7 +443,7 @@ export default function Home() {
       <section className="ruckschau-section" id="evening-review">
         <div className="ruckschau-sky">
           <img
-            src="/images/ruckschau.webp"
+            src=`${basePath}/images/ruckschau.webp`
             alt="Charcoal, chalk, and watercolor evening scene of a lamp, closing book, empty classroom, moon, and approaching dawn"
           />
           <div className="reverse-hours">
@@ -798,7 +799,6 @@ export default function Home() {
           that every traditional Waldorf practice is research-established.
         </p>
       </section>
-
       <section className="gallery-section" id="gallery">
         <div className="gallery-heading">
           <div>
@@ -844,7 +844,7 @@ export default function Home() {
       <section className="about-section" id="about">
         <div className="about-art">
           <img
-            src="/images/about-teacher.webp"
+            src=`${basePath}/images/about-teacher.webp`
             alt="Watercolor still life of a teacher’s desk with a main lesson book, paints, charcoal, chalk, silk, candle, leaves, and a wooden bird"
           />
           <p>head<br />heart<br />hands</p>
