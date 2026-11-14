@@ -1,15 +1,19 @@
-# vinext-starter
+# The Living Classroom
 
-A clean full-stack starter running on
+Notes from a Waldorf teacher: a site of stories, essays and practical guides from a combined third and fourth grade class. Topics include staging *The Conference of the Birds*, running two grades as one community, botany as relationship, fractions you can feel, restorative practice after harm, and casting without creating a hierarchy.
+
+## Development
+
+The site was built from a clean full-stack starter running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
 Drizzle support.
 
-## Prerequisites
+### Prerequisites
 
 - Node.js `>=22.13.0`
 - Linux with `flock`, `curl`, and GNU `timeout`
 
-## Sites Lifecycle
+### Sites Lifecycle
 
 The Sites lifecycle CLI runs the locked dependency install before returning this checkout. Edit the source under `app/`, then checkpoint when a coherent milestone is ready to inspect or share. The remote Sites builder runs `npm run build` against the pushed commit. Do not repeat install or build as a normal pre-checkpoint step.
 
@@ -19,7 +23,7 @@ This starter does not use `wrangler.jsonc`.
 
 Scripts that need writable project-scoped home, npm, XDG, and temporary paths use `scripts/sites-env.sh`. The `dev` and `start` scripts honor the caller's runtime environment and keep Wrangler logs inside the checkout. The generated `.sites-runtime/` directory is disposable and ignored by Git.
 
-## Included Shape
+### Included Shape
 
 - edit site code under `app/`
 - `app/chatgpt-auth.ts` provides optional dispatch-owned ChatGPT sign-in helpers
@@ -30,7 +34,7 @@ Scripts that need writable project-scoped home, npm, XDG, and temporary paths us
 - `examples/d1/` contains an optional D1 example surface
 - `drizzle.config.ts` supports local migration generation when needed
 
-## Workspace Auth Headers
+### Workspace Auth Headers
 
 OpenAI workspace sites can read the current user's email from
 `oai-authenticated-user-email`.
@@ -61,7 +65,7 @@ export default async function Home() {
 }
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+### Optional Dispatch-Owned ChatGPT Sign-In
 
 Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
 optional or required ChatGPT sign-in:
@@ -88,7 +92,7 @@ or enforce explicit server-side membership or allowlist checks.
 Use SIWC for account pages, user-specific dashboards, saved records, and write
 actions tied to the current ChatGPT user. Leave public content anonymous.
 
-## Diagnostic Commands
+### Diagnostic Commands
 
 - `npm run install:ci`: perform the one bounded lockfile install
 - `npm run dev`: start the Vite/Vinext development server
@@ -102,7 +106,7 @@ Use build and validation commands for targeted diagnosis after a remote failure,
 
 The timeout defaults can be overridden for a controlled canary with `SITES_INSTALL_TIMEOUT`, `SITES_INSTALL_KILL_AFTER`, `SITES_BUILD_TIMEOUT`, and `SITES_BUILD_KILL_AFTER`. A timeout fails the command; the helpers never retry an unchanged install or build.
 
-## Learn More
+### Learn More
 
 - [vinext Documentation](https://github.com/cloudflare/vinext)
 - [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
